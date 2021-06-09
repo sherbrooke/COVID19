@@ -1,0 +1,22 @@
+
+1、OkHttp
+2、retrofit
+3、HIlt
+4、jetpack，view-binding
+5、
+
+
+
+//功能
+1、首页显示 世界总量 今日世界新增量 今日世界死亡  今日疫苗 治愈量  // 数据如果可以实时更新，那么5分钟实时更新一次
+2、国家选择
+3、日期选择
+
+4、国家，某日情况
+
+
+截止今日各個國家情況：
+（接口）https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true
+
+國內數據情況：
+（非接口，接口描述）https://lab.isaaclin.cn/nCoV/

@@ -44,12 +44,10 @@ class CountryAdapter(): ListAdapter<Country, CountryAdapter.VIewHolder>(CountryD
 
 class CountryDiffCallback: DiffUtil.ItemCallback<Country> (){
     override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
-        val b = oldItem.country == newItem.country
         return oldItem.country == newItem.country
     }
 
     override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean {
-        val b = oldItem == newItem
         return oldItem == newItem
     }
 

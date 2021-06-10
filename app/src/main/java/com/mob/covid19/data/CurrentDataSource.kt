@@ -30,4 +30,8 @@ class CurrentDataSource @Inject constructor(private val service: VirusService){
     suspend fun historical(): List<CountryProvinceHistorical>{
         return service.historical()
     }
+
+    suspend fun historicalAll(): Historical{
+        return service.historicalAll()
+    }
 }

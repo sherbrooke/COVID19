@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:icon="@drawable/ic_launcher_background"
+    <item android:icon="@drawable/outline_home_24"
         android:id="@+id/current"
         android:title="当前" />
-    <item android:icon="@drawable/ic_launcher_background"
+    <item android:icon="@drawable/outline_language_24"
         android:id="@+id/country"
         android:title="国家" />
-    <item android:icon="@drawable/ic_launcher_background"
+    <item android:icon="@drawable/outline_date_range_24"
         android:id="@+id/timeline"
         android:title="时间" />
 

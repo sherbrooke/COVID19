@@ -1,9 +1,6 @@
 package com.mob.covid19.api
 
-import com.mob.covid19.data.Country
-import com.mob.covid19.data.CountryHistorical
-import com.mob.covid19.data.CountryProvinceHistorical
-import com.mob.covid19.data.CurrentData
+import com.mob.covid19.data.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -27,9 +24,11 @@ interface VirusService {
     @GET("historical/{country}")
     suspend fun historicalWithCountry(@Path("country") country: String): CountryHistorical
 
-    @GET("historical}")
+    @GET("historical")
     suspend fun historical(): List<CountryProvinceHistorical>
 
+    @GET("historical/all")
+    suspend fun historicalAll(): Historical
 
     companion object {
         private const val BASE_URL = "https://corona.lmao.ninja/v2/"

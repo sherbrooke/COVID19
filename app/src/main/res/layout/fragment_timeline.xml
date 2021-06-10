@@ -29,5 +29,5 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="1"
-        tools:listitem="@layout/list_item_country" />
+        tools:listitem="@layout/list_item_timeline" />
 </LinearLayout>

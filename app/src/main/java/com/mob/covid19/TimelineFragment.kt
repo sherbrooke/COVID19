@@ -43,7 +43,7 @@ class TimelineFragment : Fragment() {
                     )
                     t
                 }
-            adapter.submitList(his)
+            adapter.submitList(his.reversed())
         }
     }
 

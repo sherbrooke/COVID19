@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+
+//todo 留一个选择国家的按钮,先选择国家，然后一个list显示当前国家不同时间的每日数据
 class TimelineFragment : Fragment() {
 
     override fun onCreateView(

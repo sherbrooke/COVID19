@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+
+// TODO: 2021/6/9 请求每个国家的数据
 class CountryFragment : Fragment() {
 
     override fun onCreateView(

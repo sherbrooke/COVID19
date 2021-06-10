@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mob.covid19.data.HistoricalWithDate
 import com.mob.covid19.databinding.ListItemTimelineBinding
 
-class TimeLineAdapter(): ListAdapter<HistoricalWithDate, TimeLineAdapter.VIewHolder>(TimelineDiffCallback()) {
+class TimeLineAdapter() :
+    ListAdapter<HistoricalWithDate, TimeLineAdapter.VIewHolder>(TimelineDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VIewHolder {
         return VIewHolder(
-            ListItemTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            , parent.context
+            ListItemTimelineBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+            parent.context
         )
     }
 
@@ -23,7 +24,8 @@ class TimeLineAdapter(): ListAdapter<HistoricalWithDate, TimeLineAdapter.VIewHol
         holder.bind(country)
     }
 
-    class VIewHolder(private val binding: ListItemTimelineBinding, val context: Context): RecyclerView.ViewHolder(binding.root) {
+    class VIewHolder(private val binding: ListItemTimelineBinding, val context: Context) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: HistoricalWithDate) {
             binding.dateNow.text = "日期: " + item.date
             binding.cases.text = "感染: " + item.case.toString()
@@ -33,12 +35,18 @@ class TimeLineAdapter(): ListAdapter<HistoricalWithDate, TimeLineAdapter.VIewHol
     }
 }
 
-class TimelineDiffCallback: DiffUtil.ItemCallback<HistoricalWithDate> (){
-    override fun areItemsTheSame(oldItem: HistoricalWithDate, newItem: HistoricalWithDate): Boolean {
+class TimelineDiffCallback : DiffUtil.ItemCallback<HistoricalWithDate>() {
+    override fun areItemsTheSame(
+        oldItem: HistoricalWithDate,
+        newItem: HistoricalWithDate
+    ): Boolean {
         return oldItem.date == newItem.date
     }
 
-    override fun areContentsTheSame(oldItem: HistoricalWithDate, newItem: HistoricalWithDate): Boolean {
+    override fun areContentsTheSame(
+        oldItem: HistoricalWithDate,
+        newItem: HistoricalWithDate
+    ): Boolean {
         return oldItem == newItem
     }
 

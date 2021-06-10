@@ -10,28 +10,31 @@ import okhttp3.internal.wait
 import java.util.*
 import javax.inject.Inject
 
-class CurrentDataSource @Inject constructor(private val service: VirusService){
-     suspend fun getAll(): CurrentData{
-        return  service.getAll()
+class CurrentDataSource @Inject constructor(private val service: VirusService) {
+    suspend fun getAll(): CurrentData {
+        return service.getAll()
     }
 
     suspend fun counties(): List<Country> {
         return service.countries()
     }
 
-    suspend fun historicalWithCountryProvince(country: String, province: String): CountryProvinceHistorical{
-        return service.historicalWithCountryProvince(country , province )
+    suspend fun historicalWithCountryProvince(
+        country: String,
+        province: String
+    ): CountryProvinceHistorical {
+        return service.historicalWithCountryProvince(country, province)
     }
 
-    suspend fun historicalWithCountry(country: String): CountryHistorical{
+    suspend fun historicalWithCountry(country: String): CountryHistorical {
         return service.historicalWithCountry(country)
     }
 
-    suspend fun historical(): List<CountryProvinceHistorical>{
+    suspend fun historical(): List<CountryProvinceHistorical> {
         return service.historical()
     }
 
-    suspend fun historicalAll(): Historical{
+    suspend fun historicalAll(): Historical {
         return service.historicalAll()
     }
 }

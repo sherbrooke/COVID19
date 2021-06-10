@@ -22,21 +22,24 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
-            when(item.itemId) {
+            when (item.itemId) {
                 R.id.current -> {
                     val frag = CurrentFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, frag, null).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, frag, null).commit()
                     true
                 }
                 R.id.country -> {
                     val frag = CountryFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, frag, null).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, frag, null).commit()
                     // Respond to navigation item 2 click
                     true
                 }
                 R.id.timeline -> {
                     val frag = TimelineFragment()
-                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, frag, null).commit()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, frag, null).commit()
 
                     true
                 }

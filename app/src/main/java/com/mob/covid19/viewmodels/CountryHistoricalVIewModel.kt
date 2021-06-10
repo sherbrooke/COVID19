@@ -9,7 +9,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CountryHistoricalVIewModel @Inject constructor(var repository: CurrentDataSource): ViewModel() {
+class CountryHistoricalVIewModel @Inject constructor(var repository: CurrentDataSource) :
+    ViewModel() {
 
     private var historical: MutableLiveData<CountryHistorical>? = null
 
@@ -18,7 +19,7 @@ class CountryHistoricalVIewModel @Inject constructor(var repository: CurrentData
             historical = MutableLiveData()
         }
         GlobalScope.launch {
-            historical!!.postValue( repository.historicalWithCountry(country))
+            historical!!.postValue(repository.historicalWithCountry(country))
         }
     }
 

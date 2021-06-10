@@ -10,7 +10,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HistoricalViewModel @Inject constructor(private val repository: CurrentDataSource):ViewModel() {
+class HistoricalViewModel @Inject constructor(private val repository: CurrentDataSource) :
+    ViewModel() {
 
     private var historical: MutableLiveData<Historical>? = null
 

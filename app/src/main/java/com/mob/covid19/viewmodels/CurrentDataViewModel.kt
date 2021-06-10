@@ -10,19 +10,19 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CurrentDataViewModel @Inject constructor(var repository: CurrentDataSource): ViewModel() {
-    private  var data: MutableLiveData<CurrentData>? = null
+class CurrentDataViewModel @Inject constructor(var repository: CurrentDataSource) : ViewModel() {
+    private var data: MutableLiveData<CurrentData>? = null
 
-     fun initData() {
-         if (data == null) {
-             data = MutableLiveData()
-         }
-            GlobalScope.launch {
-                data!!.postValue( repository.getAll())
-            }
+    fun initData() {
+        if (data == null) {
+            data = MutableLiveData()
+        }
+        GlobalScope.launch {
+            data!!.postValue(repository.getAll())
+        }
     }
 
-    fun getData():MutableLiveData<CurrentData>? {
+    fun getData(): MutableLiveData<CurrentData>? {
         return data
     }
 

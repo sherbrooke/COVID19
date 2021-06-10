@@ -15,10 +15,13 @@ interface VirusService {
     suspend fun getAll(): CurrentData
 
     @GET("countries")
-    suspend fun countries():List<Country>
+    suspend fun countries(): List<Country>
 
     @GET("historical/{country}/{province}")
-    suspend fun historicalWithCountryProvince(@Path("country") country: String,@Path("province") province: String): CountryProvinceHistorical
+    suspend fun historicalWithCountryProvince(
+        @Path("country") country: String,
+        @Path("province") province: String
+    ): CountryProvinceHistorical
 
 
     @GET("historical/{country}")

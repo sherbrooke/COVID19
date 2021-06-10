@@ -12,7 +12,6 @@ import com.mob.covid19.databinding.FragmentTimelineBinding
 import com.mob.covid19.viewmodels.HistoricalViewModel
 
 
-//todo 留一个选择国家的按钮,先选择国家，然后一个list显示当前国家不同时间的每日数据
 class TimelineFragment : Fragment() {
 
     private lateinit var binding: FragmentTimelineBinding
@@ -32,13 +31,18 @@ class TimelineFragment : Fragment() {
         val adapter = TimeLineAdapter()
         binding.countryRecycler.adapter = adapter
         historicalViewModel.getHistorical().observe(viewLifecycleOwner) { historical ->
-            // TODO: 2021/6/10 将Historical的key取出，然后重新包装为list
             var keys = historical.cases.keys.toList()
-            var his: List<HistoricalWithDate> = List<HistoricalWithDate>(historical.cases.keys.size) {
-                val date = keys.get(it)
-                var t = HistoricalWithDate(historical.cases.get(date)!!, historical.deaths.get(date)!!, historical.recovered.get(date)!!, date)
-                t
-            }
+            var his: List<HistoricalWithDate> =
+                List<HistoricalWithDate>(historical.cases.keys.size) {
+                    val date = keys.get(it)
+                    var t = HistoricalWithDate(
+                        historical.cases.get(date)!!,
+                        historical.deaths.get(date)!!,
+                        historical.recovered.get(date)!!,
+                        date
+                    )
+                    t
+                }
             adapter.submitList(his)
         }
     }

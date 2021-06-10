@@ -14,12 +14,12 @@ import com.mob.covid19.databinding.FragmentCountryBinding
 import com.mob.covid19.databinding.ListItemCountryBinding
 import kotlin.math.log
 
-class CountryAdapter(): ListAdapter<Country, CountryAdapter.VIewHolder>(CountryDiffCallback()) {
+class CountryAdapter() : ListAdapter<Country, CountryAdapter.VIewHolder>(CountryDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VIewHolder {
         return VIewHolder(
-            ListItemCountryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            , parent.context
+            ListItemCountryBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+            parent.context
         )
     }
 
@@ -28,12 +28,13 @@ class CountryAdapter(): ListAdapter<Country, CountryAdapter.VIewHolder>(CountryD
         holder.bind(country)
     }
 
-    class VIewHolder(private val binding: ListItemCountryBinding, val context: Context): RecyclerView.ViewHolder(binding.root) {
+    class VIewHolder(private val binding: ListItemCountryBinding, val context: Context) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Country) {
             Glide.with(context).load(item.countryInfo.flag).into(binding.countryFlag)
             binding.countryCases.text = "感染总数: " + item.cases.toString()
             binding.countryDeaths.text = "死亡总数: " + item.deaths.toString()
-            binding.countryName.text =  item.country.toString()
+            binding.countryName.text = item.country.toString()
             binding.countryRecovered.text = "治愈: " + item.recovered.toString()
             binding.countryTests.text = "疫苗: " + item.tests.toString()
             binding.countryTodayCases.text = "今日感染: " + item.todayCases.toString()
@@ -42,7 +43,7 @@ class CountryAdapter(): ListAdapter<Country, CountryAdapter.VIewHolder>(CountryD
     }
 }
 
-class CountryDiffCallback: DiffUtil.ItemCallback<Country> (){
+class CountryDiffCallback : DiffUtil.ItemCallback<Country>() {
     override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean {
         return oldItem.country == newItem.country
     }

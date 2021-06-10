@@ -13,7 +13,7 @@ class NetWorkModule {
 
     @Singleton
     @Provides
-    fun provideVirusService():VirusService {
+    fun provideVirusService(): VirusService {
         return VirusService.create()
     }
 }

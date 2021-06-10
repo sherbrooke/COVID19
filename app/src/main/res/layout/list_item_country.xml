@@ -8,19 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_margin="10dp"
-       >
+        android:layout_margin="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <ImageView
                 android:id="@+id/country_flag"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_launcher_background"
-                />
+                android:src="@drawable/ic_launcher_background" />
+
             <TextView
                 android:id="@+id/country_name"
                 android:layout_width="wrap_content"
@@ -30,16 +30,16 @@
                 android:layout_toRightOf="@id/country_flag"
                 android:layout_alignParentRight="true"
                 android:gravity="right"
-                tools:text="China"
-                />
+                tools:text="China" />
+
             <TextView
                 android:id="@+id/country_cases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_flag"
                 android:textSize="10sp"
-                android:text="1000"
-                />
+                android:text="1000" />
+
             <TextView
                 android:id="@+id/country_today_cases"
                 android:layout_width="wrap_content"
@@ -49,16 +49,16 @@
                 android:gravity="right"
                 android:layout_alignParentRight="true"
                 android:text="1000"
-                android:textSize="10sp"
-                />
+                android:textSize="10sp" />
+
             <TextView
                 android:id="@+id/country_deaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_cases"
                 android:textSize="10sp"
-                android:text="1000"
-                />
+                android:text="1000" />
+
             <TextView
                 android:id="@+id/country_today_deaths"
                 android:layout_width="wrap_content"
@@ -68,16 +68,16 @@
                 android:gravity="right"
                 android:layout_below="@id/country_cases"
                 android:textSize="10sp"
-                android:text="1000"
-                />
+                android:text="1000" />
+
             <TextView
                 android:id="@+id/country_recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_deaths"
                 android:textSize="10sp"
-                android:text="1000"
-                />
+                android:text="1000" />
+
             <TextView
                 android:id="@+id/country_tests"
                 android:layout_width="wrap_content"
@@ -87,8 +87,7 @@
                 android:layout_toRightOf="@id/country_recovered"
                 android:gravity="right"
                 android:textSize="10sp"
-                android:text="1000"
-                />
+                android:text="1000" />
 
         </RelativeLayout>
 

@@ -12,7 +12,6 @@ import com.mob.covid19.databinding.FragmentCountryBinding
 import com.mob.covid19.viewmodels.CountryVIewModel
 
 
-// TODO: 2021/6/9 请求每个国家的数据
 class CountryFragment : Fragment() {
 
     private lateinit var binding: FragmentCountryBinding

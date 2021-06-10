@@ -10,7 +10,7 @@ data class CountryHistorical(
 
 
 data class Timeline(
-    @field:SerializedName("cases")  val cases: Map<String, Int>,
-    @field:SerializedName("deaths")  val deaths: Map<String, Int>,
-    @field:SerializedName("recovered")  val recovered: Map<String, Int>
+    @field:SerializedName("cases") val cases: Map<String, Int>,
+    @field:SerializedName("deaths") val deaths: Map<String, Int>,
+    @field:SerializedName("recovered") val recovered: Map<String, Int>
 )

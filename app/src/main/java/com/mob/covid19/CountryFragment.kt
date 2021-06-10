@@ -32,8 +32,8 @@ class CountryFragment : Fragment() {
         val adapter = CountryAdapter()
         binding.countryRecycler.adapter = adapter
         countryModel.getCountry()!!.observe(viewLifecycleOwner, {
+//            todo 将list根据case数量排序,或者提供一个可以排序的工具
             adapter.submitList(it)
-            Log.e("ssss", "submitList success")
         })
 
     }

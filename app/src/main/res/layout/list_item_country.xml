@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_margin="10dp"
@@ -18,20 +18,26 @@
                 android:id="@+id/country_flag"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_launcher_background"
                 />
             <TextView
                 android:id="@+id/country_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
                 android:layout_toRightOf="@id/country_flag"
-                android:text="China"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                tools:text="China"
                 />
             <TextView
                 android:id="@+id/country_cases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_flag"
+                android:textSize="10sp"
                 android:text="1000"
                 />
             <TextView
@@ -40,21 +46,28 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_flag"
                 android:layout_toRightOf="@id/country_cases"
+                android:gravity="right"
+                android:layout_alignParentRight="true"
                 android:text="1000"
+                android:textSize="10sp"
                 />
             <TextView
                 android:id="@+id/country_deaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_cases"
+                android:textSize="10sp"
                 android:text="1000"
                 />
             <TextView
                 android:id="@+id/country_today_deaths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/country_deaths"
+                android:gravity="right"
                 android:layout_below="@id/country_cases"
+                android:textSize="10sp"
                 android:text="1000"
                 />
             <TextView
@@ -62,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_deaths"
+                android:textSize="10sp"
                 android:text="1000"
                 />
             <TextView
@@ -69,7 +83,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/country_deaths"
+                android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/country_recovered"
+                android:gravity="right"
+                android:textSize="10sp"
                 android:text="1000"
                 />
 

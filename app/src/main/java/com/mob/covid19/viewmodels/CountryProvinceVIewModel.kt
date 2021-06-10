@@ -6,10 +6,12 @@ import com.mob.covid19.data.Country
 import com.mob.covid19.data.CountryProvinceHistorical
 import com.mob.covid19.data.CurrentData
 import com.mob.covid19.data.CurrentDataSource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class CountryProvinceVIewModel @Inject constructor(var repository: CurrentDataSource): ViewModel() {
 
     private var historical: MutableLiveData<CountryProvinceHistorical>? = null

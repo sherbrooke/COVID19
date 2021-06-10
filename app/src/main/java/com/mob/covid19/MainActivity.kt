@@ -35,7 +35,9 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.timeline -> {
-                    // Respond to navigation item 2 click
+                    val frag = TimelineFragment()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragment_container, frag, null).commit()
+
                     true
                 }
                 else -> false

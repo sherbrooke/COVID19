@@ -5,7 +5,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".CurrentFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/design_default_color_primary"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="世界疫情数据"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="15dp"
+        />
 
+</LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -23,6 +38,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="今日新增： " />
+            <TextView
+                android:id="@+id/today_increase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -43,7 +63,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="今日死亡： " />
-
+            <TextView
+                android:id="@+id/today_death"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -65,6 +89,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="感染总数： " />
+            <TextView
+                android:id="@+id/all_increase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -86,6 +115,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="死亡总数： " />
+            <TextView
+                android:id="@+id/all_death"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -107,6 +141,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="治愈总数： " />
+            <TextView
+                android:id="@+id/all_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -128,6 +167,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="疫苗接种： " />
+            <TextView
+                android:id="@+id/all_tests"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -23,7 +23,7 @@ data class Country(
 //    @field:SerializedName("oneCasePerPeople") val oneCasePerPeople: Int,
 //    @field:SerializedName("oneDeathPerPeople") val oneDeathPerPeople: Int,
 //    @field:SerializedName("oneTestPerPeople") val oneTestPerPeople: Int,
-    @field:SerializedName("undefined") val undefined: Int,
+    @field:SerializedName("undefined") val undefined: Float,
 //    @field:SerializedName("activePerOneMillion") val activePerOneMillion: Float,
 //    @field:SerializedName("recoveredPerOneMillion") val recoveredPerOneMillion: Float,
 //    @field:SerializedName("criticalPerOneMillion") val criticalPerOneMillion: Float,
@@ -36,7 +36,7 @@ data class CountryInfo(
     @field:SerializedName("iso2") val iso2: String,
     @field:SerializedName("iso3") val iso3: String,
     @field:SerializedName("lat") val lat: Float,
-    @field:SerializedName("long") val long: Int,
+    @field:SerializedName("long") val long: Float,
     @field:SerializedName("flag") val flag: String,
 )
 

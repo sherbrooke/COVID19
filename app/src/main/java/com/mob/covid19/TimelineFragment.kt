@@ -31,19 +31,21 @@ class TimelineFragment : Fragment() {
         val adapter = TimeLineAdapter()
         binding.countryRecycler.adapter = adapter
         historicalViewModel.getHistorical().observe(viewLifecycleOwner) { historical ->
-            var keys = historical.cases.keys.toList()
-            var his: List<HistoricalWithDate> =
-                List<HistoricalWithDate>(historical.cases.keys.size) {
-                    val date = keys.get(it)
-                    var t = HistoricalWithDate(
-                        historical.cases.get(date)!!,
-                        historical.deaths.get(date)!!,
-                        historical.recovered.get(date)!!,
-                        date
-                    )
-                    t
+            historical.cases.keys.toList().let {  keys ->
+                List(historical.cases.keys.size) {
+                    keys.get(it).let { date ->
+                        HistoricalWithDate(
+                            historical.cases.get(date)!!,
+                            historical.deaths.get(date)!!,
+                            historical.recovered.get(date)!!,
+                            date
+                        )
+                    }
+                }.apply{
+                    adapter.submitList(this.reversed())
                 }
-            adapter.submitList(his.reversed())
+            }
+
         }
     }
 

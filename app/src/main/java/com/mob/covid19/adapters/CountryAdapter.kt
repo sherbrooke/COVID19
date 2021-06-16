@@ -24,8 +24,9 @@ class CountryAdapter() : ListAdapter<Country, CountryAdapter.VIewHolder>(Country
     }
 
     override fun onBindViewHolder(holder: VIewHolder, position: Int) {
-        val country = getItem(position)
-        holder.bind(country)
+        getItem(position).apply {
+            holder.bind(this)
+        }
     }
 
     class VIewHolder(private val binding: ListItemCountryBinding, val context: Context) :

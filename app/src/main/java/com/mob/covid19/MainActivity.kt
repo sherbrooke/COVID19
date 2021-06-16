@@ -1,7 +1,12 @@
 package com.mob.covid19
 
+import android.database.ContentObserver
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mob.covid19.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,27 +25,31 @@ class MainActivity : AppCompatActivity() {
         initView()
     }
 
+
     private fun initView() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.current -> {
-                    val frag = CurrentFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, frag, null).commit()
+                   CurrentFragment().let {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, it, null).commit()
+                    }
+
                     true
                 }
                 R.id.country -> {
-                    val frag = CountryFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, frag, null).commit()
+                   CountryFragment().let {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, it, null).commit()
+                    }
                     // Respond to navigation item 2 click
                     true
                 }
                 R.id.timeline -> {
-                    val frag = TimelineFragment()
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, frag, null).commit()
-
+                    TimelineFragment().let {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, it, null).commit()
+                    }
                     true
                 }
                 else -> false

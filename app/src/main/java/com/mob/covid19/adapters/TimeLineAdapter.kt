@@ -20,8 +20,9 @@ class TimeLineAdapter() :
     }
 
     override fun onBindViewHolder(holder: VIewHolder, position: Int) {
-        val country = getItem(position)
-        holder.bind(country)
+        getItem(position).apply {
+            holder.bind(this)
+        }
     }
 
     class VIewHolder(private val binding: ListItemTimelineBinding, val context: Context) :
